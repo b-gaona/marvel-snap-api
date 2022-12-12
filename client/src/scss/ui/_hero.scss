@@ -1,0 +1,14 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.hero{
+  z-index: -5;
+  position: absolute;
+  height: 100vh;
+  min-width: 20px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0 0 0 /.8) 0%, rgba(0, 0, 0, 0.185) 100%), url("../../build/img/marvel-universe.webp");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}

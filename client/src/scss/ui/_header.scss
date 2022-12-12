@@ -1,0 +1,8 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.header{
+  position: sticky;
+  top: 0;
+  background-color: rgba(0 0 0 /.3);
+}

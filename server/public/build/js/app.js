@@ -1,0 +1,2 @@
+async function getAllCards(){const t=await fetch("http://localhost:3000/v1/cards");return await t.json()}function showCards(t){const n=document.querySelector("#marvel-grid");t.forEach(t=>{const e=document.createElement("div");e.innerHTML=`\n      <h3 class="text-center">${t.cname}</h3>\n      <img src="${t.art}" alt="${t.cname}" width="150px">\n      <p class="text-center">Ability: <span>${t.ability}</span></p>\n    `,console.log(t),n.appendChild(e)})}document.addEventListener("DOMContentLoaded",async()=>{showCards(await getAllCards())});
+//# sourceMappingURL=app.js.map

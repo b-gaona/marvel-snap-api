@@ -1,0 +1,36 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+#marvel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2.5rem;
+  column-gap: 1.5rem;
+
+  @include m.phone {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  div {
+    background-image: linear-gradient(black 0%, rgba(0 0 0 /.7) 100%);
+    color: white;
+    border-radius: 2rem;
+    padding-top: 1rem;
+    box-shadow: 5px 5px 2px rgba(#000000, 0.3);
+
+    h3 {
+      font-size: 1.8rem;
+    }
+    img {
+      margin: 0 auto;
+    }
+    p {
+      font-weight: 700;
+      padding-inline: 2rem;
+      font-size: 1.5rem;
+      span {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
