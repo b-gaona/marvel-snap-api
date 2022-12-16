@@ -14,10 +14,21 @@ html {
 body {
   font-family: v.$fuentePrincipal;
   font-size: 1.6rem;
+  color: v.$white;
+  background-image: linear-gradient(rgba(0 0 0 /.8) 0%, rgba(0, 0, 0, 0.4) 100%), url("../../build/img/marvel-universe.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 p {
-  font-size: 2.3rem;
+  font-size: 2rem;
+  font-family: captain;
+  span{
+    display: block;
+    font-size: 80%;
+  }
 }
 [class*="container"],
 .container {
