@@ -6,14 +6,33 @@ h3 {
   margin: 0;
   line-height: 1.5;
 }
-h1 {
-  font-size: 4rem;
+
+@font-face {
+  font-family: widow;
+  src: url("../../build/fonts/black-widow.ttf");
 }
-h2 {
-  font-size: 4rem;
+@font-face {
+  font-family: captain;
+  src: url("../../build/fonts/american-captain.otf");
+}
+@font-face {
+  font-family: avengers;
+  src: url("../../build/fonts/avengeance-bold.ttf");
+}
+h1, h2{
+  font-size: 3rem;
+  font-family: captain;
+  font-weight: 400;
 }
 h3 {
-  font-size: 3.2rem;
+  font-size: 2.5rem;
+  font-family: avengers;
+  font-weight: 400;
+}
+h4 {
+  font-size: 2.5rem;
+  font-family: widow;
+  font-weight: 400;
 }
 [class$="heading"] {
   margin-bottom: 2rem;
