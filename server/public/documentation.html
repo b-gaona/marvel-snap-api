@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>API Documentation</title><link rel="preload" href="build/css/app.css" as="style"><link rel="stylesheet" href="build/css/app.css"></head><body><header class="header"><nav class="container p-block-3 d-flex justify-content-center col-gap-3"><a href="./index.html" class="text-white">Marvel Snap</a> <a href="./documentation.html" class="text-white">API Documentation</a></nav></header><main class="container mb-3"><div class="doc-grid"><div class="min-20 mt-3"><p>GETTING STARTED</p><ul><li><a href="#introduction">Introduction</a></li><li><a href="#getting-started">Getting started</a></li><li><a href="#base-url">Base URL</a></li><li><a href="#json-schema">JSON Schema</a></li></ul><p>Encodings</p><ul><li><a href="#json">JSON</a></li></ul><p>Resources</p><ul><li><a href="#root">Root</a></li><li><a href="#cards">Cards</a></li><li><a href="#decks">Decks</a></li></ul></div><div class="documentation"><h1 class="mt-3 text-center">Marvel Snap API</h1><h2>Documentation</h2><hr><div class="documentation-content"><div><h3 class="captain-font" id="introduction">Introduction</h3><p>Welcome to the Marvel Snap API! This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests. The data that this API has is from the dataset found <strong><a href="https://www.kaggle.com/datasets/jeanmidev/marvel-snap-decks-and-cards">here</a> </strong>in <strong><a href="https://www.kaggle.com/">Kaggle</a></strong> . Read through the getting started section before you dive in. Most of your problems should be solved just by reading through it.</p></div><div><h3 class="captain-font" id="getting-started">Getting started</h3><p>Let's make our first API request to the Marvel Snap API! Open up a terminal and use curl or Postman to make an API request for a resource. In the example below, we're trying to get the first card, Abomination:</p><div class="request"><p>http://localhost:3000/v1/cards/1/</p></div><p>We'll use Postman for our examples as it displays responses nicely and gives us a whole lot more useful information. If you don't want to download Postman, just use the curl command instead.</p><p>Here is the response we get:</p><div class="request"><pre>
+Content-Type: application/json
+{
+  "_id": "6394b612bdd8b00592b40efc",
+  "cid": 1,
+  "__v": 0,
+  "art": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/abomination.webp?v=21",
+  "cname": "Abomination",
+  "cost": 5,
+  "power": 9,
+  "ability": ""
+}
+
+</pre></div><p>If your response looks slightly different don't panic. This is probably because more data has been added to Marvel Snap API since we made this documentation.</p></div><div><h3 class="captain-font" id="base-url">Base URL</h3><p>The Base URL is the root URL for all of the API, if you ever make a request to Marvel Snap API and you get back a 404 NOT FOUND response then check the Base URL first.</p><p>The Base URL for Marvel Snap API is:</p><div class="request"><p>http://localhost:3000/v1/</p></div><p>The documentation below assumes you are prepending the Base URL to the endpoints in order to make requests.</p></div><div><h3 class="captain-font" id="json-schema">JSON Schema</h3><p>All resources support JSON Schema. Making a request to /v1/&lt;resource&gt;/schema will give you the details of that resource. This will allow you to programmatically inspect the attributes of that resource and their types.</p></div></div><h2>Encodings</h2><hr><div class="documentation-content"><div><h3 class="captain-font" id="json">JSON</h3><p>JSON is the standard data format provided by Marvel Snap API by default.</p></div></div><h2>Resources</h2><hr><div class="documentation-content"><div><h3 class="captain-font" id="root">Root</h3><p>The Root resource provides information on all available resources within the API.</p><p class="attribute">Example request:</p><div class="request"><p>http://localhost:3000/v1/</p></div><p class="attribute">Example response:</p><div class="request"><pre>
+Content-Type: application/json
+{
+    "cards": "http://localhost:3000/v1/cards/",
+    "decks": "http://localhost:3000/v1/decks/",
+}</pre></div><p class="attribute">Attributes:</p><ul class="list"><li><span>cards</span> <i>string</i> -- The URL root for Card resources.</li><li><span>decks</span> <i>string</i> -- The URL root for Deck resources.</li></ul></div><hr><div><h3 class="captain-font" id="cards">Cards</h3><p>A Card resource is an individual card within the Marvel Snap.</p><p>Endpoints</p><ul class="list"><li><span>/cards/</span> -- Get all the card resources.</li><li><span>/cards/:id/</span> -- Get a specific card resource.</li><li><span>/cards/schema/</span> -- View the JSON schema for this resource.</li></ul><p class="attribute">Example request:</p><div class="request"><p>http://localhost:3000/v1/cards/10</p></div><p class="attribute">Example response:</p><div class="request"><pre>
+Content-Type: application/json
+{
+    "_id": "6394b611bdd8b00592b40b9b",
+    "cid": 10,
+    "__v": 0,
+    "art": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/angela.webp?v=21",
+    "cname": "Angela",
+    "cost": 2,
+    "power": 1,
+    "ability": "When you play a card here, +2 Power."
+}
+
+</pre></div><p class="attribute">Attributes:</p><ul class="list"><li><span>_id</span> <i>string</i> -- The object id in the database of this card.</li><li><span>cid</span> <i>number</i> -- The id of this card.</li><li><span>__v</span> <i>number</i> -- The corresponding version of this card.</li><li><span>art</span> <i>string</i> -- The image path of this card.</li><li><span>cname</span> <i>string</i> -- The name of this card.</li><li><span>cost</span> <i>number</i> -- The cost of this card.</li><li><span>power</span> <i>number</i> -- The power of this card.</li><li><span>ability</span> <i>string</i> -- The ability of this card.</li></ul></div><hr><div><h3 class="captain-font" id="decks">Decks</h3><p>A Deck resource is an individual deck within the Marvel Snap.</p><p>Endpoints</p><ul class="list"><li><span>/decks/</span> -- Get all the deck resources.</li><li><span>/decks/:id/</span> -- Get a specific deck resource.</li><li><span>/decks/schema/</span> -- View the JSON schema for this resource.</li></ul><p class="attribute">Example request:</p><div class="request"><p>http://localhost:3000/v1/decks/121</p></div><p class="attribute">Example response:</p><div class="request"><pre>
+Content-Type: application/json
+{
+  "_id": "63979efdfde8e6810d7f460c",
+  "name": "Buffs",
+  "__v": 0,
+  "avg_cost": 3.3,
+  "avg_power": 3,
+  "cids": [
+      {
+          "_id": "6394b610bdd8b00592b40852",
+          "cid": 181,
+          "__v": 0,
+          "art": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/nightcrawler.webp?v=21",
+          "cname": "Nightcrawler",
+          "cost": 1,
+          "power": 2,
+          "ability": "You can move this once."
+      },
+      ...
+  ],
+  "did": 121,
+}
+
+</pre></div><p class="attribute">Attributes:</p><ul class="list"><li><span>_id</span> <i>string</i> -- The object id in the database of this deck.</li><li><span>did</span> <i>number</i> -- The id of this deck.</li><li><span>__v</span> <i>number</i> -- The corresponding version of this deck.</li><li><span>cids</span> <i>array</i> -- The corresponding cards of this deck.</li><li><span>name</span> <i>string</i> -- The name of this deck.</li><li><span>avg_cost</span> <i>number</i> -- The average cost of this deck.</li><li><span>avg_power</span> <i>number</i> -- The average power of this deck.</li></ul></div></div></div></div></main></body></html>
