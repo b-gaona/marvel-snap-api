@@ -1,22 +1,62 @@
 //Colors
-.text-white{
+.text-white {
   color: white;
 }
 
 //Margins
-.mt-3{
+.mt-3 {
   margin-top: 3rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
 }
 
 //Paddings
-.p-block-3{
+.p-block-3 {
   padding: 3rem;
 }
-.pt-w-100{
-  padding-top: 100vh;
+.pb-3 {
+  padding-bottom: 3rem;
 }
 
 //Aligns
-.text-center{
+.text-center {
   text-align: center;
+}
+
+//Display
+.d-flex {
+  display: flex;
+}
+.d-none {
+  display: none;
+}
+.col-gap-3 {
+  column-gap: 3rem;
+}
+.col-gap-5 {
+  column-gap: 5rem;
+}
+.row-gap-3 {
+  row-gap: 3rem;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+//Width
+.w-100 {
+  width: 100%;
+}
+.w-40 {
+  width: 40%;
+}
+.min-20{
+  min-width: 20rem;
 }
