@@ -45,12 +45,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function getAllCards() {
-  const res = await fetch(`http://localhost:3000/v1/cards`);
+  const res = await fetch(`${window.location.origin}/v1/cards`);
   return await res.json();
 }
 
 async function getAllDecks() {
-  const res = await fetch(`http://localhost:3000/v1/decks`);
+  const res = await fetch(`${window.location.origin}/v1/decks`);
   return await res.json();
 }
 
