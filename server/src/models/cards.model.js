@@ -19,9 +19,9 @@ function loadCardsData() {
           columns: true, //Returns it as a JS object
         })
       )
-      //If it gets data, the results array will push it
+      //If it gets data, save it into the DB
       .on("data", async (data) => {
-          saveCard(data);
+         await saveCard(data);
       })
       .on("error", (error) => {
         console.log(error);
@@ -62,7 +62,22 @@ async function getAllCards() {
   return await cards.find({}, ""); //The second parameter is the field that we need to extract, if we need more just add " ", if we want all except one "-field"
 }
 
+async function findCard(filter) {
+  return await cards.findOne(filter);
+}
+
+async function findCards(values) {
+  return await cards.find({ 'cid': { $in: values } });
+}
+
+function getSchema() {
+  return cards.schema.paths;
+}
+
 module.exports = {
   loadCardsData,
   getAllCards,
+  findCard,
+  findCards,
+  getSchema,
 };
