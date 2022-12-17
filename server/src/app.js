@@ -10,7 +10,7 @@ const api = require("./routes/api");
 const app = express(helmet());
 
 app.use(cors({
-  origin: global.location.origin, //This server can do requests to the server, it's like a whitelist
+  origin: request.headers.host, //This server can do requests to the server, it's like a whitelist
 })); //To allow cross origin
 
 app.use(morgan("combined"));
