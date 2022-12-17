@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "./server/src/server.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
-    "start": "npm start --prefix server"
+    "start": "npm start --prefix server",
+    "build": "npm install --prefix server"
   },
   "keywords": [],
   "author": "",
