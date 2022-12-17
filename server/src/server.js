@@ -14,8 +14,8 @@ const server = http.createServer(app);
 
 async function startServer() {
   await mongoConnect();
-  await loadCardsData();
-  await loadDecksData();
+  //await loadCardsData();
+  //await loadDecksData();
   
   server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
