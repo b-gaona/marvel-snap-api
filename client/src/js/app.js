@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   showDecks(await getAllDecks());
 
   new Swiper(".swiper-cards", {
-    slidesPerView: 3,
+    slidesPerView: 2,
     grid: {
       rows: 2,
       fill: "column",
@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     pagination: {
       clickable: true,
     },
+    breakpoints: {
+      768: {
+        slidesPerView: 3
+      },
+    }
   });
 
   const sw = new Swiper(".swiper-decks", {

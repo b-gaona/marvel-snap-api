@@ -49,14 +49,16 @@ a{
   }
 }
 .doc-grid{
-  display: grid;
-  grid-template-columns: 20% 75%;
-  column-gap: 4rem;
-  .min-20{
-    position: fixed;
-  }
-  .documentation{
-    grid-column: 2/3;
+  @include m.phone{
+    display: grid;
+    grid-template-columns: 20% 75%;
+    column-gap: 4rem;
+    .min-20{
+      position: fixed;
+    }
+    .documentation{
+      grid-column: 2/3;
+    }
   }
 }
 h1,h3{
