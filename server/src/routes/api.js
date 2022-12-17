@@ -6,8 +6,8 @@ const decksRouter = require("./decks/decks.router");
 const api = express.Router();
 
 const endpoints = {
-  cards: "http://localhost:3000/v1/cards/",
-  decks: "http://localhost:3000/v1/decks/",
+  cards: "https://marvel-snap-bgaona.onrender.com/v1/cards/",
+  decks: "https://marvel-snap-bgaona.onrender.com/v1/decks/",
 }
 
 //The use of v1 is to set a version to the API
