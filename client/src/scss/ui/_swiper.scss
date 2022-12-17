@@ -68,17 +68,21 @@
 .grid-decks {
   margin-bottom: 3rem;
   width: 100%;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
+
+  display: flex;
+  flex-direction: column;
+
   background-image: linear-gradient(
     to bottom,
     rgba(216, 212, 212, 0.4) 0%,
-    rgba(216, 212, 212, 0.4) 66%,
-    rgba(0 0 0 /0.8) 66%,
+    rgba(216, 212, 212, 0.4) 61%,
+    rgba(0 0 0 /0.8) 61%,
     rgba(0 0 0 /0.8) 100%
   );
 
   @include m.phone {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 25% 20% 50%;
     grid-template-rows: 1fr;
     background-image: linear-gradient(
