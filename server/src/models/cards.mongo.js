@@ -2,19 +2,19 @@ const mongoose = require("mongoose");
 
 const cardsSchema = new mongoose.Schema({
   cid: {
-    type: Number, 
+    type: Number,
     required: true,
   },
   cname: {
-    type: String, 
+    type: String,
     required: true,
   },
   art: {
     type: String,
     required: true,
   },
-  ability:{
-    type: String, 
+  ability: {
+    type: String,
     required: true,
   },
   cost: {
@@ -22,9 +22,9 @@ const cardsSchema = new mongoose.Schema({
     required: true,
   },
   power: {
-    type: Number, 
+    type: Number,
     required: true,
-  }
-})
+  },
+});
 
 module.exports = mongoose.model("Card", cardsSchema);

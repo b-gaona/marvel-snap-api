@@ -1,5 +1,9 @@
 const express = require("express");
-const { httpGetAllCards, httpGetOneCard, httpGetCardSchema } = require("./cards.controller");
+const {
+  httpGetAllCards,
+  httpGetOneCard,
+  httpGetCardSchema,
+} = require("./cards.controller");
 
 const cardsRouter = express.Router();
 

@@ -1,69 +1,70 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-ul{
-  li{
+ul {
+  li {
     border: 1px solid white;
     padding: 1rem;
   }
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }
-.documentation{
-  p{
+.documentation {
+  p {
     font-family: v.$fuentePrincipal;
     font-size: 1.8rem;
   }
 }
-.captain-font{
+.captain-font {
   font-family: captain;
   font-weight: 400;
 }
-.request{
-  background-color: rgba(0 0 0 /.7);
+.request {
+  background-color: rgba(0 0 0 /0.7);
   border: 1px solid v.$lightGrey;
   padding-left: 1rem;
   overflow: hidden;
-  pre{
+  pre {
     overflow-x: auto;
   }
 }
-.list{
+.list {
   list-style: square;
   padding-left: 2.5rem;
-  
-  li{
+
+  li {
     border: unset;
     padding-inline: 0;
   }
-  span{
+  span {
     background-color: rgba(248, 239, 239, 0.6);
     font-weight: 700;
     padding-inline: 1rem;
   }
 }
-.doc-grid{
-  @include m.phone{
+.doc-grid {
+  @include m.phone {
     display: grid;
     grid-template-columns: 20% 75%;
     column-gap: 4rem;
-    .min-20{
+    .min-20 {
       position: fixed;
     }
-    .documentation{
+    .documentation {
       grid-column: 2/3;
     }
   }
 }
-h1,h3{
+h1,
+h3 {
   scroll-margin-top: 9rem;
 }
-.attribute{
+.attribute {
   font-weight: 700;
 }

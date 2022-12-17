@@ -5,13 +5,10 @@ const fs = require("fs");
 
 const cards = require("./cards.mongo");
 
-
 function loadCardsData() {
   return new Promise((resolve, reject) => {
     //With .createReadStream we create a new stram data and we read it
-    fs.createReadStream(
-      path.join(__dirname, "..", "..", "data", "cards.csv")
-    )
+    fs.createReadStream(path.join(__dirname, "..", "..", "data", "cards.csv"))
       //Pipe function will parse all the data given, this functions only works with readable streams
       .pipe(
         parse({
@@ -21,7 +18,7 @@ function loadCardsData() {
       )
       //If it gets data, save it into the DB
       .on("data", async (data) => {
-         await saveCard(data);
+        await saveCard(data);
       })
       .on("error", (error) => {
         console.log(error);
@@ -67,7 +64,7 @@ async function findCard(filter) {
 }
 
 async function findCards(values) {
-  return await cards.find({ 'cid': { $in: values } });
+  return await cards.find({ cid: { $in: values } });
 }
 
 function getSchema() {

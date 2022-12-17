@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     },
     breakpoints: {
       768: {
-        slidesPerView: 3
+        slidesPerView: 3,
       },
-    }
+    },
   });
 
   const sw = new Swiper(".swiper-decks", {
@@ -88,7 +88,7 @@ function showDecks(decks) {
     const containerDiv = document.createElement("div");
     containerDiv.classList.add("swiper-decks", "d-flex");
     containerDiv.classList.remove("swiper-cards");
-    
+
     const cardsDiv = document.createElement("div");
     cardsDiv.classList.add("swiper-wrapper");
 
@@ -112,7 +112,12 @@ function createCard({ art, cname, ability, cost, power }) {
   const cardImg = document.createElement("div");
   cardImg.classList.add("swiper-slide");
   cardImg.innerHTML = `<img src="${art}" alt="${cname}" width="200px" name='${JSON.stringify(
-    { cname: cname.replaceAll("'", "&#39;"), ability: ability.replaceAll("'", "&#39;"), cost, power }
+    {
+      cname: cname.replaceAll("'", "&#39;"),
+      ability: ability.replaceAll("'", "&#39;"),
+      cost,
+      power,
+    }
   )}'>`;
   return cardImg;
 }

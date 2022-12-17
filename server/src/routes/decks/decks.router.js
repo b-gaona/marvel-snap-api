@@ -1,5 +1,9 @@
 const express = require("express");
-const { httpGetAllDecks, httpGetOneDeck, httpGetDeckSchema } = require("./decks.controller");
+const {
+  httpGetAllDecks,
+  httpGetOneDeck,
+  httpGetDeckSchema,
+} = require("./decks.controller");
 
 const decksRouter = express.Router();
 

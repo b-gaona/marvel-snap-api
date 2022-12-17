@@ -9,9 +9,11 @@ const api = require("./routes/api");
 
 const app = express(helmet());
 
-app.use(cors({
-  origin: "https://marvel-snap-bgaona.onrender.com", //This server can do requests to the server, it's like a whitelist
-})); //To allow cross origin
+app.use(
+  cors({
+    origin: "https://marvel-snap-bgaona.onrender.com", //This server can do requests to the server, it's like a whitelist
+  })
+); //To allow cross origin
 
 app.use(morgan("combined"));
 
@@ -21,7 +23,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use("/v1", api);
 
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 

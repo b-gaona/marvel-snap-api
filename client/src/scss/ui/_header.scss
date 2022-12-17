@@ -1,9 +1,9 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-.header{
+.header {
   position: sticky;
   top: 0;
-  background-color: rgba(0 0 0 /.65);
+  background-color: rgba(0 0 0 /0.65);
   z-index: 2;
 }

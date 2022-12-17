@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const MONGO_URL= process.env.MONGO_URL;
+const MONGO_URL = process.env.MONGO_URL;
 
 //It's just triggered once, it's like to put an on event, but just once
 mongoose.connection.once("open", () => {
@@ -22,5 +22,5 @@ async function mongoDisconnect() {
 
 module.exports = {
   mongoConnect,
-  mongoDisconnect
-}
+  mongoDisconnect,
+};

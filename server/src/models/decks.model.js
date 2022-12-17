@@ -42,7 +42,7 @@ async function saveDeck(deck) {
     //Object cards
     const array = JSON.parse(deck.cids).map(String);
     const records = await findCards(array);
-    
+
     await decks.updateOne(
       {
         name: deck.name,
